@@ -30,4 +30,13 @@ class TextareaTest extends TestCase
             $this->html->textarea('description', 'Foo bar')
         );
     }
+
+    /** @test */
+    public function it_can_create_a_textarea_with_a_custom_attribute()
+    {
+        $this->assertHtmlStringEqualsHtmlString(
+            '<textarea data-format="price">',
+            $this->html->textarea()->customAttribute('data-format', 'price')
+        );
+    }
 }

@@ -17,6 +17,17 @@ class Textarea extends BaseElement
     }
 
     /**
+     * @param string $attribute
+     * @param string|null $value
+     *
+     * @return static
+     */
+    public function customAttribute($attribute, $value = null)
+    {
+        return $this->attribute($attribute, $value);
+    }
+
+    /**
      * @param string|null $placeholder
      *
      * @return static

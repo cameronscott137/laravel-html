@@ -26,6 +26,16 @@ class TextareaTest extends TestCase
     }
 
     /** @test */
+    public function it_can_create_an_input_with_a_custom_attribute()
+    {
+        $this->assertHtmlStringEqualsHtmlString(
+            '<textarea data-format="price">',
+            Textarea::create()->customAttribute('data-format', 'price')
+        );
+    }
+
+
+    /** @test */
     public function it_can_create_a_textarea_with_a_placeholder()
     {
         $this->assertHtmlStringEqualsHtmlString(
