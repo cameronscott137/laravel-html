@@ -89,6 +89,16 @@ class InputTest extends TestCase
     }
 
     /** @test */
+    public function it_can_create_an_input_with_a_custom_attribute()
+    {
+        $this->assertHtmlStringEqualsHtmlString(
+            '<input data-format="price">',
+            Input::create()->customAttribute('data-format', 'price')
+        );
+    }
+
+
+    /** @test */
     public function it_can_check_an_input()
     {
         $this->assertHtmlStringEqualsHtmlString(
